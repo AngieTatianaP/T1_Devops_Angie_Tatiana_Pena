@@ -1,5 +1,11 @@
-FROM jenkins/jenkins:lts-jdk17
+FROM python:3
 
+RUN pip install --upgrade pip
+RUN pip install gunicorn
+RUN pip install django
+RUN pip install pylint
+
+FROM jenkins/jenkins:lts-jdk17
 # No utilizar en un ambiente de producción
 ENV JENKINS_USER=tatiana
 ENV JENKINS_PASS=Tatis2615*
