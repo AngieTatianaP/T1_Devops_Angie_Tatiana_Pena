@@ -1,16 +1,16 @@
 services:
   django_gunicorn:
         build:
-            context: ./jenkins
+            context: .
         volumes:
             - static:/static
         env_file:
             - .env
         ports:
             - "8000:8000"
- 
+
   jenkins:
-      build: ../../Downloads/jenkins
+      build: ./jenkins
       image: jenkins
       container_name: jenkins
       restart: always
