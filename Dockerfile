@@ -1,15 +1,12 @@
-FROM python:3.8.5-alpine
+FROM python:3
 
 RUN pip install --upgrade pip
+RUN pip install gunicorn
+RUN pip install django
 
-COPY ./requirements.txt .
+EXPOSE 8000/tcp
 
-RUN pip install -r requirements.txt
+ADD ./start.sh /
+WORKDIR /web-server
 
-COPY ./rp-portfolio /app
-
-WORKDIR /app
-
-COPY ./entrypoint.sh /
-
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+ENTRYPOINT [ "sh","/start.sh" ]
