@@ -16,6 +16,11 @@ pipeline {
             }
           }
         }
+      stage('foo') {
+      steps {
+        sh "docker version" // DOCKER_CERT_PATH is automatically picked up by the Docker client
+      }
+    }
       stage('Checkout') {
         steps {
             git branch: 'main', url: 'https://github.com/AngieTatianaP/T1_Devops_Angie_Tatiana_Pena.git'
