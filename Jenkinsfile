@@ -13,7 +13,8 @@ pipeline {
         }
      stage('run') {
         steps {
-                sh 'cp -r ./django-project/* /deploy'
+                sh 'docker rm -f django'
+                sh 'docker run --rm -d --name django -p 8000:8000 django'
             }
           }
    }
