@@ -5,7 +5,7 @@ pipeline {
         steps {
             git branch: 'main', url: 'https://github.com/AngieTatianaP/T1_Devops_Angie_Tatiana_Pena.git'
             sh """
-                docker build -t django .
+                docker build -t T1_Devops_Angie_Tatiana_Pena .
             """
             }
           }
