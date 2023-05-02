@@ -1,6 +1,14 @@
 pipeline {
     agent any
     stages {
+      stage('Set up Docker') {
+        steps {
+            script {
+                def dockerHome = tool 'Docker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }
+          }
+        }
       stage('Checkout') {
         steps {
             git branch: 'main', url: 'https://github.com/AngieTatianaP/T1_Devops_Angie_Tatiana_Pena.git'
