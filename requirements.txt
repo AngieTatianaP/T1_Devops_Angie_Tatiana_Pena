@@ -4,4 +4,6 @@ importlib-metadata
 contextlib2
 regex
 sortedcontainers
+pylint
+gunicorn
 
