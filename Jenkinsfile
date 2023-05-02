@@ -23,7 +23,7 @@ pipeline {
           }
      stage('pylint'){
             steps {
-                sh 'pylint ./django-project || true'
+                sh 'pylint ./django-project'
             }
         }
      stage('run') {
