@@ -23,7 +23,7 @@ pipeline {
           }
      stage('pylint'){
             steps {
-                sh 'pylint ./django-project > /logs/pylint-logs.txt || true'
+                sh 'pylint ./django-project || true'
             }
         }
      stage('run') {
